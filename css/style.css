@@ -1,0 +1,138 @@
+/* 
+ * Shawn Bond
+ * 06/24/24
+ * css for scrabble elements
+*/
+
+/* style for game board element */
+.scrabble-board-tile {
+    width: 72px;
+    height: 82px;
+    border: solid black;
+    border-width: 6px 4px 6px 4px;
+}
+.scrabble-board-blank {
+    background-image: url(../images/board/board-blank.png);
+}
+.scrabble-board-red {
+    background-image: url(../images/board/board-red.png);
+}
+.scrabble-board-blue {
+    background-image: url(../images/board/board-blue.png);
+}
+
+
+/* game pieces */
+.tile {
+    max-height: 70px;
+}
+
+
+/* game piece rack */
+.rack-container {
+    height: 142px;
+    width: 450px;
+    padding-top: 30px;
+    background-image: url(../images/rack-middle.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* buttons */
+.button {
+    outline: inherit;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+.button.button-cube {
+    width: 142px;
+    height: 142px;
+    border-radius: 14px;
+}
+.button.button-thin {
+    height: 32px;
+    width: 182px;
+    border-radius: 4px;
+}
+
+/* score displays */
+h4 {
+    width: 182px;
+    padding-right: 20px;
+}
+h4 span {
+    font-weight: 700;
+}
+
+/* tutorial */
+p {
+    text-align: left;
+}
+.valid {
+    color: green;
+    font-weight: 600;
+}
+.invalid {
+    color: red;
+    font-weight: 600;
+}
+
+/* helpers to apply colors 
+ * color-1 red
+ * color-2 blue
+*/
+.text-color-1 {
+    color: #EB5A40;
+}
+.text-color-2 {
+    color: #6BBFB3;
+}
+.button-color-1 {
+    background-color: #EB5A40;
+    color: #FFFFFF;
+}
+.button-color-1:hover {
+    background-color: #cf523c;
+}
+.button-color-2 {
+    background-color: #6BBFB3;
+    color: #FFFFFF;
+}
+.button-color-2:hover {
+    background-color: #5ca197;
+}
+
+
+/* table for tile count,
+ * 4 col, X rows
+*/
+#bag-table {
+    width: 522px;
+    border-collapse: collapse;
+}
+#bag-table td, #bag-table th {
+    width: 80px;
+    border: none;
+    padding: 4px;
+    text-align: justify;
+}
+
+
+/* positioning elements */
+/* wrap elements towards center of page */
+.center {
+    margin: auto;
+    width: 70%;
+}
+/* wrap elements horizontally */
+.horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+/* uniform spacing between certain elements */
+.space {
+    width: 50px;
+}

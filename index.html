@@ -1,0 +1,108 @@
+<!--
+    Shawn Bond
+    06/24/24
+    scrabble
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- meta elements -->
+        <meta charset="utf-8">
+        <title>HW5</title>
+        <link rel="stylesheet" href="css/style.css">
+        <!-- JQuery UI CSS -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <!-- Bootstrap 3.3.7 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Include jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- jQuery UI -->
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+    <body>
+        <hr>
+
+        <!-- tutorial -->
+        <div class="center">
+            <p>Scrabble! Drag and drop your tiles from the rack onto the desired board space. All tiles after the first must be placed directly adjacent to an existing tile on either the right or left. Valid placements will be highlighted in <span class="valid">green</span>. Invalid placements will be highlighted in <span class="invalid">red</span>. Once you have completed your desired word click 'Submit Word' to calculate the score. 'Submit Word' and 'Clear Board' will delete any active tiles on the game board from the bag. You can reset the tiles avaliable in the rack by pressing 'Swap Hand', doing so will return the tiles from your rack to the bag. When you have finished playing you can reset the game to it's default state by pressing 'Restart Game'.</p>
+            <p>The current distribution of tiles in your bag is displayed below the rack.</p>
+        </div>
+
+        <hr>
+        <!-- game controls -->
+        <div class="center horizontal">
+            <!-- scores -->
+            <h4 class="text-color-1">Total Score: <span id="total-score">0</span></h4>
+            <div class="space"></div>
+            <h4 class="text-color-2">Word Score: <span id="word-score">0</span></h4>
+            <div class="space"></div>
+            <h4 class="text-color-1">Tiles Remaining: <span id="tiles-remaining">0</span></h4>
+        </div>
+        <!-- control buttons -->
+        <div class="center horizontal">
+            <button class="button button-thin button-color-1" id="restart-game">Restart Game</button>
+            <div class="space"></div>
+            <button class="button button-thin button-color-2" id="submit-word">Submit Word</button>
+        </div>
+
+        <hr>
+
+        <!-- game board -->
+        <div class="center">
+            <div class="horizontal scrabble-board">
+                <div class="scrabble-board-tile scrabble-board-blank"></div>
+                <div class="scrabble-board-tile scrabble-board-blank"></div>
+                <div class="scrabble-board-tile scrabble-board-red"></div>
+                <div class="scrabble-board-tile scrabble-board-blank"></div>
+                <div class="scrabble-board-tile scrabble-board-blank"></div>
+                <div class="scrabble-board-tile scrabble-board-blank"></div>
+                <div class="scrabble-board-tile scrabble-board-blue"></div>
+                <div class="scrabble-board-tile scrabble-board-blank"></div>
+                <div class="scrabble-board-tile scrabble-board-blue"></div>
+                <div class="scrabble-board-tile scrabble-board-blank"></div>
+                <div class="scrabble-board-tile scrabble-board-blank"></div>
+                <div class="scrabble-board-tile scrabble-board-blank"></div>
+                <div class="scrabble-board-tile scrabble-board-red"></div>
+                <div class="scrabble-board-tile scrabble-board-blank"></div>
+                <div class="scrabble-board-tile scrabble-board-blank"></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- rack and rack controls -->
+        <div class="center horizontal">
+            <img src="images/rack-left.png">
+            <div class="rack-container"></div>
+            <img src="images/rack-right.png">
+
+            <div class="space"></div>
+            <!-- reset hand -->
+            <button class="button button-cube button-color-1" id="regenerate-tiles">Swap Hand</button>
+            <div class="space"></div>
+            <!-- reset board -->
+            <button class="button button-cube button-color-2" id="clear-board">Clear Board</button>
+
+        </div>
+
+        <hr>
+
+        <!-- tile inventory -->
+        <div class="center horizontal">
+            <table id="bag-table">
+                <tbody>
+                </tbody>
+            </table>
+        </div>>
+
+        <hr>
+
+        <!-- tile struct -->
+        <script src="js/pieces-associated-array.js"></script>
+        <!-- game controller -->
+        <script src="js/game-controller.js"></script>
+        <!-- tile controller -->
+        <script src="js/tile-controller.js"></script>
+    </body>
+</html>
